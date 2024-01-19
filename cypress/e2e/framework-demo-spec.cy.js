@@ -47,7 +47,10 @@ describe('these tests will demonstrate cypress framework concepts on an angular 
         checkoutPage.getCheckoutbox().click({force:true})
         checkoutPage.getPurchaseButton().click()
         checkoutPage.getSuccessConfirmationMessage().should('contain.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).')
-
+        checkoutPage.getSuccessConfirmationMessage().then(function(element) {
+            const actualText=element.text()
+            expect(actualText.includes("Success!")).to.be.true
+        })
     })
 
     it.skip('it will check properties of a disabled radio button', () => {
