@@ -11,9 +11,11 @@ async function setupNodeEvents(on, config) {
     return config;
 }
 
+
 module.exports = defineConfig({
+    projectId: "aa7tkd",
     e2e: {
-        specPattern: 'cypress/e2e/examples/*-spec.cy.js',
+        specPattern: 'cypress/e2e/BDD/*.feature',
         chromeWebSecurity: false,
         defaultCommandTimeout: 6000,
         reporter: 'mochawesome',

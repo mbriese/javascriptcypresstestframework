@@ -4,25 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run",
+    "test": "node_modules\\.bin\\cypress run test",
     "headTest": "npm run test -- --headed",
-    "chromeTest": "npm run test -- --browser chrome",
-    "recordDashboardTest": "npm run test -- --spec -key   --reporter mochawesomenpm inst",
-    "firefoxTest": "npm run test -- --browser firefox"
+    "chromeTestHeaded": "npm run test --record --key 769e1b53-f831-418a-8243-5f7b8667c97f --headed --browser chrome",
+    "recordCypressCloud": "npx cypress run --record --key 769e1b53-f831-418a-8243-5f7b8667c97f",
+    "firefoxTest": "npm run test --record --key 769e1b53-f831-418a-8243-5f7b8667c97f --browser firefox",
+    "chromeTestHeadedGreenKart": "npm run chromeTestHeaded --spec cypress/e2e/examples/test1-spec.cy.js"
   },
   "author": "mbriese",
   "license": "ISC",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@cypress/browserify-preprocessor": "latest",
     "cypress": "^13.6.2",
     "cypress-iframe": "^1.0.1",
-    "mochawesome": "^7.1.3",
-    "@cypress/browserify-preprocessor": "latest"
+    "mochawesome": "^7.1.3"
   },
   "modifyObstructiveCode": true,
   "experimentalSourceRewriting": false,
   "chromeWebSecurity": true,
   "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@cucumber/gherkin": "^28.0.0",
     "mocha": "^10.2.0"
   }
 }

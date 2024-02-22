@@ -13,7 +13,8 @@ describe('these tests will demonstrate cypress framework concepts on an angular 
         })
     })
 
-    it.skip('it will demonstrate PAGE OBJECTS USAGE in tests', () => {
+    // fill the form on Home Page //
+    it('it will demonstrate PAGE OBJECTS USAGE in tests', () => {
         const homePage = new HomePage();
         cy.visit(Cypress.env('url')+'/angularpractice/')
        // cy.visit('https://rahulshettyacademy.com/angularpractice/')
@@ -25,8 +26,11 @@ describe('these tests will demonstrate cypress framework concepts on an angular 
         homePage.getShopTab().click()
     })
 
+    // shop and add 2 products to the cart
+    // validate the price
+    // go to checkout and select US
+    // click to check out and get success message
     it('it will demonstrate shopping with PAGE OBJECTS USAGE in tests', () => {
-
         const homePage = new HomePage();
         const productsPage = new ProductsPage();
         const cartPage = new CartPage();
@@ -53,19 +57,19 @@ describe('these tests will demonstrate cypress framework concepts on an angular 
         })
     })
 
-    it.skip('it will check properties of a disabled radio button', () => {
+    it('it will check properties of a disabled radio button', () => {
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         cy.get('#inlineRadio3').should('be.disabled')
     })
 
-    it.skip('will test tech shopping option from this page', () => {
+    it('will test tech shopping option from this page', () => {
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         cy.get(':nth-child(2) > .nav-link').click()
         // get shopping elements and then find match + add to cart//
         cy.selectProduct('Blackberry')
     })
 
-    it.skip('will iterate over a list of products in an array to be added to the cart',()=> {
+    it('will iterate over a list of products in an array to be added to the cart',()=> {
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         cy.get(':nth-child(2) > .nav-link').click()
         globalThis.data.productName.forEach(function (element) {
