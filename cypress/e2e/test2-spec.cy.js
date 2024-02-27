@@ -29,7 +29,7 @@ describe('perform web page element tests', () => {
         cy.get('[for="radio3"] > .radioButton').should('be.checked')
     })
 
-    it.skip('it will test checkboxes', () => {
+    it('it will test checkboxes', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         cy.get('#checkBoxOption1').check().should('be.checked')
         cy.get('#checkBoxOption2').check().should('be.checked')
@@ -40,7 +40,7 @@ describe('perform web page element tests', () => {
         cy.get('#checkBoxOption3').uncheck().should('not.be.checked')
     })
 
-    it.skip('will test autocomplete selection United States from country list', () => {
+    it('will test autocomplete selection United States from country list', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('#autocomplete').type('United')
         cy.get('.ui-menu-item div').each(($el, index, list) => {
@@ -50,7 +50,7 @@ describe('perform web page element tests', () => {
         cy.get('#autocomplete').should('have.value', 'United States (USA)')
     })
 
-    it.skip('will test visible/invisible text box and text fill in', () => {
+    it('will test visible/invisible text box and text fill in', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('#displayed-text').should('be.visible')
         cy.get('#hide-textbox').click()
@@ -64,7 +64,7 @@ describe('perform web page element tests', () => {
         cy.get('#displayed-text').should('have.value', 'text string')
     })
 
-    it.skip('will test alert boxes with messages from Alert and Confirm buttons', () => {
+    it('will test alert boxes with messages from Alert and Confirm buttons', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('#alertbtn').click()
         // verify in logs that alert message appears
@@ -80,7 +80,7 @@ describe('perform web page element tests', () => {
 
     })
 
-    it.skip('will test alert boxes with name text and messages from Alert and Confirm buttons', () => {
+    it('will test alert boxes with name text and messages from Alert and Confirm buttons', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('#name').type('name')
         cy.get('#alertbtn').click()
@@ -96,7 +96,7 @@ describe('perform web page element tests', () => {
             expect(str).to.equal('Hello name, Are you sure you want to confirm?')
         })
     })
-    it.skip('will test handling child windows', () => {
+    it('will test handling child windows', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('#opentab').invoke('removeAttr', 'target').click()
         cy.origin("https://www.qaclickacademy.com", () => {
@@ -106,7 +106,7 @@ describe('perform web page element tests', () => {
         })
     })
 
-    it.skip('will iterate through a course table to find course and verify the price in col 3', () => {
+    it('will iterate through a course table to find course and verify the price in col 3', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('tr td:nth-child(2)').each(($el, index, $list) => {
             const text = $el.text()
@@ -119,28 +119,28 @@ describe('perform web page element tests', () => {
         })
     })
 
-    it.skip('will test mouse hover events to verify expected behavior-Top', () => {
+    it('will test mouse hover events to verify expected behavior-Top', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('div.mouse-hover-content').invoke('show')
         cy.contains('Top').click()
         cy.url().should('include', 'top')
     })
 
-    it.skip('will test mouse hover events to verify expected behavior-Top', () => {
+    it('will test mouse hover events to verify expected behavior-Top', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('div.mouse-hover-content').invoke('show')
         cy.contains('Top').click({force:true})
         cy.url().should('include', 'top')
     })
 
-    it.skip('will test mouse hover events to verify expected behavior-Reload', () => {
+    it('will test mouse hover events to verify expected behavior-Reload', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.get('div.mouse-hover-content').invoke('show')
         cy.contains('Reload').click()
         cy.url().should('include', 'AutomationPractice')
     })
 
-    it.skip('will handle testing Frames in this test', () => {
+    it('will handle testing Frames in this test', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice')
         cy.frameLoaded('#courses-iframe').as('myframe')
         cy.iframe().find("a[href*='mentorship']").eq(0).click()
@@ -149,4 +149,3 @@ describe('perform web page element tests', () => {
     })
 
 })
-

@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: '13acc1',
   chromeWebSecurity: false,
   defaultCommandTimeout: 6000,
   //reporter: 'mochawesome',
