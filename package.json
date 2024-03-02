@@ -7,7 +7,7 @@
     "test": "node_modules\\.bin\\cypress run",
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
-    "recordDashboardTest": "npm run test -- --spec -key   --reporter mochawesomenpm inst",
+    "recordDashboardTest": "npm run test -- --spec 'cypress\e2e\examples\framework-demo-spec' -key   --reporter mochawesome inst",
     "firefoxTest": "npm run test -- --browser firefox"
   },
   "author": "mbriese",

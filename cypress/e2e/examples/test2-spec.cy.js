@@ -14,7 +14,7 @@ describe('perform web page element tests', () => {
         })
     })
 
-    it.skip('it will test radio buttons', () => {
+    it('it will test radio buttons', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
         cy.get('[for="radio1"] > .radioButton').click()
